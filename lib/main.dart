@@ -6,6 +6,7 @@ import 'package:shake/shake.dart';
 void main() {
   runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
@@ -19,7 +20,7 @@ void main() {
             ),
           ),
         ),
-        body: const ValorantRandomizer(),
+        body: ValorantRandomizer(),
       ),
     ),
   );
@@ -55,15 +56,19 @@ class _ValorantRandomizerState extends State<ValorantRandomizer> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Expanded(
-        child: FlatButton(
-          onPressed: () {
-            agentRandomizer();
-          },
-          child: Image.asset(
-            'images/undefined$valorantAgent.png',
+      child: Row(
+        children: [
+          Expanded(
+            child: FlatButton(
+              onPressed: () {
+                agentRandomizer();
+              },
+              child: Image.asset(
+                'images/undefined$valorantAgent.png',
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
